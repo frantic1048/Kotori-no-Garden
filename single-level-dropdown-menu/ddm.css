@@ -1,0 +1,106 @@
+*{box-sizing: border-box;}
+a{text-decoration:none;color:inherit;}
+body{
+    font-family:"微软雅黑","Arial","文泉驿微米黑";
+    font-size:18px;
+    
+    margin:0;
+    padding:0;
+    
+    background-color:lightpink;
+}
+h1{margin:2em 0.4em 0 0.4em;text-align:center;color:#fff;font-size:3em;}
+#dropdown-wrapper{
+    display:block;
+    margin:3em 0;
+    
+    text-align: center;
+    width:100%;
+}
+#dropdown-wrapper li{
+    /*！！！！！！！！！！！！*/
+    display:inline-table;/*每个项横着排列*/
+    padding:0;
+    margin:0;
+    
+    position:relative;
+    
+    width:10em;
+    height:1em;/*限定高度*/
+    overflow:hidden;
+    text-align: left;
+    background:#fff;
+    
+     -webkit-transition:all ease-in-out 0.3s;
+    transition:all ease-in-out 0.3s;
+}
+#dropdown-wrapper span{
+    display:block;
+    padding:0.4em 1em;
+    width:10em;
+    color:#333;
+}
+#dropdown-wrapper span:after{
+    display:inline-block;
+    float:right;
+    content:">";
+    
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);/*主动设置0deg是为了能够渐变*/
+    
+     -webkit-transition:all ease-in-out 0.3s;
+    transition:all ease-in-out 0.3s;
+}
+#dropdown-wrapper li:hover span:after{
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);/*划过的时候那个右键头旋转90度，变成朝下的啦*/
+}
+#dropdown-wrapper li ul{
+    /*！！！！！！！！！！！！*/
+    display:block;
+    position:absolute;
+    
+    padding:0;
+    margin:0;
+    
+    height:0;/*0高度，也就是不显示*/
+    line-height:0;/*0行高，这个的作用是用来制造一个文字展开的效果*/
+    overflow:hidden;
+    
+    color:#555;
+    
+    opacity:0;/*0不透明度，为了制造一个渐入效果*/
+    
+    -webkit-transform:translateY(-1em);
+    transform: translateY(-1em);
+
+     -webkit-transition:all ease-in-out 0.3s;
+    transition:all ease-in-out 0.3s;
+}
+#dropdown-wrapper li ul li{
+    padding:0.7em 1em;
+    
+}
+#dropdown-wrapper li:hover ul{
+    /*！！！！！！！！！！！！*/
+    /*这是顶级列表的子项鼠标划过 的下拉列表的状态，
+     *这里让它恢复正常的显示状态，也就是说划过的时候就显示出来
+    */
+    opacity:1;
+    height:auto;
+    line-height:1em;
+    
+    -webkit-transform: translaY(0);
+    transform: translateY(0);
+}
+
+
+
+/*下面的是修饰*/
+#dropdown-wrapper li:hover span{
+    color:rgb(0,173,238);
+}
+#dropdown-wrapper li:hover ul li:hover{
+    background:rgb(0,173,238);
+    color:#eee;
+}

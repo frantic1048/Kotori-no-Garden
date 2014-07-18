@@ -1,0 +1,1 @@
+Index page's Kotori by [SuperSleuth10](http://supersleuth10.deviantart.com/ "supersleuth10")
