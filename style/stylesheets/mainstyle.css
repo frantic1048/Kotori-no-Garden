@@ -1,141 +1,115 @@
-*{
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
 
-    box-sizing: border-box;
-}
+a {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid black;
+  color: inherit;
+  -webkit-transition: color 0.3s,border-color 0.3s;
+  transition: color 0.3s,border-color 0.3s; }
 
-a{
-    display:inline-block;
-    text-decoration:none;
-    border-bottom:2px solid black;
-    color:inherit;
+a:hover {
+  color: #fff;
+  border-color: #fff; }
 
-    -webkit-transition:color 0.3s,border-color 0.3s;
-    transition:color 0.3s,border-color 0.3s;
-}
-a:hover{color:#fff;border-color:#fff;}
-body{
+body {
+  font-family: "微软雅黑","Arial","文泉驿微米黑";
+  margin: 0;
+  padding: 0;
+  background: #ff7577; }
 
-    font-family:"微软雅黑","Arial","文泉驿微米黑";
+header {
+  display: inline-block;
+  position: absolute;
+  z-index: 9999;
+  width: 520px;
+  height: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  margin: 0;
+  padding: 1% 0;
+  text-align: right;
+  background-image: url("../images/kotori_kanbe_render_by_supersleuth10.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 10px black; }
 
-    margin:0;
+header::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(212, 224, 146, 0) 0%, rgba(212, 224, 146, 0.4) 95%);
+  content: '';
+  opacity: 0.3;
+  -webkit-transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, 50%, 0);
+  -webkit-transition: transform 0.35s;
+  transition: transform 0.35s; }
 
-    padding:0;
+#header-standard {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: transform 0.6s;
+  transition: transform 0.6s; }
 
-    background:rgb(255,117,119);
-}
+#header-extend {
+  position: absolute;
+  right: 0em;
+  width: 100%;
+  padding: 1em 2em;
+  bottom: 0;
+  opacity: 0;
+  background: white;
+  -webkit-transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, 50%, 0);
+  -webkit-transition: transform 0.6s;
+  transition: transform 0.6s; }
 
+#header-extend a {
+  border-color: #333; }
 
-header{
+#header-extend a:hover {
+  color: #bf1f37;
+  border-color: #bf1f37; }
 
-    display: inline-block;
+header:hover::before {
+  opacity: 1;
+  transform: translate3d(0, 0, 0); }
 
-    position:absolute;
-    z-index:9999;
+header:hover #header-standard {
+  text-shadow: 2px 2px 5px #ff7577;
+  -webkit-transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, 50%, 0); }
 
-    width:520px;
-    height:100%;
-    min-height:600px;
+header:hover #header-extend {
+  color: #333;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
-    overflow:hidden;
+article {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 520px;
+  height: 100%;
+  min-width: 20em;
+  font-size: 1.2em; }
 
-    margin:0;
-    padding:1% 0;
-    text-align:right;
+#demo-list {
+  list-style: none; }
 
-    background-image:url("../images/kotori_kanbe_render_by_supersleuth10.png");
-    background-position:center bottom;
-    background-repeat:no-repeat;
-    background-color:#333;
-    color:#fff;
-    box-shadow:0 0 10px black;
-}
-header::before{
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:520px;
-    height:100%;
-
-    background: linear-gradient(to bottom,rgba(212, 224, 146,0) 0%, rgba(212, 224, 146,0.4) 95%);
-    content: '';
-    opacity:0.3;
-
-    -webkit-transform:translate3d(0,50%,0);
-    transform:translate3d(0,50%,0);
-
-    -webkit-transition:transform 0.35s;
-    transition:transform 0.35s;
-}
-
-#header-standard{
-    position:absolute;
-
-    top:2em;
-    right:2em;
-
-    color:rgb(255,255,255);
-    text-shadow:2px 2px 5px black;
-
-    -webkit-transform:translate3d(0,0,0);
-    transform:translate3d(0,0,0);
-
-    -webkit-transition:transform 0.6s;
-    transition:transform 0.6s;
-}
-#header-extend{
-    position:absolute;
-
-    right:0em;
-    width:100%;
-    padding:1em 2em;
-    bottom:0;
-
-    opacity:0;
-
-    background:white;
-
-    -webkit-transform:translate3d(0,50%,0);
-    transform:translate3d(0,50%,0);
-
-    -webkit-transition:transform 0.6s;
-    transition:transform 0.6s;
-}
-#header-extend a{border-color:#333;}
-#header-extend a:hover{color:rgb(191, 31, 55);border-color:rgb(191, 31, 55);}
-header:hover::before{
-    opacity:1;
-    transform:translate3d(0,0,0);
-}
-header:hover #header-standard{
-
-    text-shadow:2px 2px 5px rgb(255, 117, 119);
-    -webkit-transform:translate3d(0,50%,0);
-    transform:translate3d(0,50%,0);
-}
-header:hover #header-extend{
-    color:#333;
-    opacity:1;
-
-    -webkit-transform:translate3d(0,0,0);
-    transform:translate3d(0,0,0);
-}
-article{
-    position:absolute;
-
-    margin:0;
-
-    top:0;
-    left:520px;
-
-    height:100%;
-    min-width:20em;
-    font-size:1.2em;
-}
-#demo-list{
-    list-style:none;
-}
-#demo-list>a{
-    height:2em;
-    line-height:2em;
-}
+#demo-list > a {
+  height: 2em;
+  line-height: 2em; }
