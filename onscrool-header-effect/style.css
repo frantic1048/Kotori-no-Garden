@@ -65,6 +65,7 @@ body{
 #navbar.state4{
   top:90%;
   left:20%;
+  width:auto;
   color:rgba(255, 105, 180,1);
   background:rgba(255,255,255,0.6);
   border-left:10px solid rgba(255, 105, 180,1);
@@ -73,7 +74,7 @@ body{
 #navbar.state5{
   top:90%;
   left:-2em;
-  width:40em;
+  width:auto;
   padding-left:2em;
   -webkit-transform:skewX(-20deg);
   transform:skewX(-20deg);
