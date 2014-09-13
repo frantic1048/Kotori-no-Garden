@@ -1,0 +1,111 @@
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  background:#eee;
+}
+#title{
+  padding:100px 0.5em;
+  margin:0;
+  font-size:80px;
+}
+#navbar{
+  position:fixed;
+  top:280px;
+  left:0;
+  width:39em;
+  height:3em;
+  padding:1em 0.5em;
+
+  transition:all 0.4s ease;
+
+  color:rgba(255, 117, 119,1);
+  background:rgba(0, 0, 0,1);
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  border:0px solid rgba(0,0,0,0);
+}
+#navbar>span{
+  display:inline-block;
+  width:6em;
+  text-align:center;
+}
+#navbar.state1{
+  width:100%;
+  height:5em;
+  line-height:3em;
+  top:0;
+  color:rgba(255,255,255,1);
+}
+#navbar.state2{
+  font-size:1.5em;
+  top:50vh;
+  height:9em;
+  width:7em;
+  color:rgba(255,255,255,1);
+  background:rgba(0,0,0,0.3);
+}
+#navbar.state2>span{
+  display:block;
+}
+#navbar.state3{
+  top:0;
+  bottom:10%;
+  height:100vh;
+  width:100vw;
+  font-size:2em;
+  line-height:100vh;
+  color:rgba(25,25,25,1);
+  text-shadow:1px 1px 1px grey;
+  background:rgba(255,240, 255,0.7);
+  box-shadow:0 0 10px rgba(255,240, 255,1);
+
+  backface-visibility:hidden;
+}
+#navbar.state4{
+  top:90%;
+  left:20%;
+  color:rgba(255, 105, 180,1);
+  background:rgba(255,255,255,0.6);
+  border-left:10px solid rgba(255, 105, 180,1);
+  border-radius:0 1em 1em 0;
+}
+#navbar.state5{
+  top:90%;
+  left:-2em;
+  width:40em;
+  padding-left:2em;
+  -webkit-transform:skewX(-20deg);
+  transform:skewX(-20deg);
+  color:rgba(255,255,255,1);
+  text-shadow:2px 2px 2px rgba(117, 140, 255,1);
+  background:rgba(111, 224, 252,0.9);
+  box-shadow:3px 3px 5px rgba(117, 140, 255,1);
+}
+#navbar.state5>span{
+-webkit-transform:skewX(20deg);
+transform:skewX(20deg);
+}
+#navbar.state6{
+  top:90%;
+  left:-2em;
+  width:100%;
+  padding-left:2em;
+
+  color:rgba(22,22,22,1);
+  background:rgba(255,255,255,0.9);
+  border-right:8px solid rgba(22,22,22,1);
+}
+
+#content>p{
+  margin:0;
+  padding:4vh 5vh;
+  display:block;
+  height:92vh;
+  font-size:3em;
+  color:white;
+}
+#content>p:nth-child(4n+1){background:hsl(0, 47%, 62%);}
+#content>p:nth-child(4n+2){background:hsl(82, 47%, 62%);}
+#content>p:nth-child(4n+3){background:hsl(189, 47%, 62%);}
+#content>p:nth-child(4n)  {background:hsl(288, 47%, 62%);}
