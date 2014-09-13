@@ -1,4 +1,4 @@
-Kotori-no-UI
+:blossom: Kotori-no-UI :blossom:
 ============
 
-网页UI元素与常用效果实例集
+网页 UI 元素与常用效果实例集
