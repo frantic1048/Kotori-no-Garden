@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>滚动视差效果 | Kotori no UI</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body id=parallax-box>
+  <style type="text/css">
+      #top-nav{
+        color:#eee;
+        background:rgba(0,0,0,0.3);
+        padding:0.2em 1em;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100vw;
+      }
+      #top-nav>a{
+        color:#aaa;
+        text-decoration:none;
+        transition:color 0.3s ease;
+      }
+      #top-nav>a:hover{
+        color:#eee;
+      }
+      #top-nav>span{margin:0 3em;}
+  </style>
+  <nav id="top-nav"><a href="../index.html">← 返回主页</a><span>滚动视差效果( parallax effect )</span></nav>
+  <div id="parallax-layer1"></div>
+  <div id="parallax-layer2"></div>
+  <div id="parallax-layer3">
+    <pre>
+    [Seitokai no Ichizon]
+    I won't forget Ki-kun until the day I forget Ki-kun — Mafuyu Shiina ,
+
+    Life is never too short to try again! — Kurimu Sakurano
+
+    It's not that the world is boring. It's because you became a boring person! — Kurimu Sakurano
+
+    Once again, I realised how difficult it was to maintain a harem. — Sugisaki Ken
+
+[Seitokai no Ichizon Lv.2]
+     Echo of Death. — Sugisaki Ken
+
+    That night, I realised one more thing. My definition of dirty and Ringo's definition of dirty are worlds apart. — Sugisaki Ken
+
+    Go home and drink your mommy's milk, okay? — Sugisaki Ken
+
+    Go home and drink your mommy's milk, okay? — Ringo Sugisaki
+
+    Onii-chan, are not satisfied with my body? — Ringo Sugisaki
+
+    Ringo-chan. Name your price — Chizuru Akaba
+
+    I'm always the one that's moving. My body was bare like a newborn child. — Elise Toudou
+
+    Hello? Is this the Department of Defense? — Lilicia Toudou
+
+[Tayutama: Kiss on My Deity]
+    I dont remember marrying such a weak guy — Mashiro Mito
+
+    I dont remember having such a demonic wife either! — Yuuri Mito
+
+[Haiyore! Nyaruko-san]
+    Its not a crime if no one knows about it. — Nyaruko
+
+    Cyclone! — Cyclone vacuum
+
+    Joker! — Nyaruko
+
+[Haiyore! Nyaruko-san W]
+    Nothing is more superior than my dimension severing repulsive kick — Nyaruko
+
+[Chobits]
+    Chii? — Chii
+
+    There are no people in this city. I will leave this city and go to another one. I hope that I will meet someone. Someone just for me. — Atashi
+
+[Fate/stay night]
+    People die when they are killed. — Emiya Shirou
+
+    I am the bone of my sword. Steel is my body, and fire is my blood. I have created over a thousand blades. Unknown to death. Nor known to life. Have withstood pain to create many weapons. Yet, those hands will never hold anything. So as I pray, Unlimited Blade Works. — Archer
+
+    The weakness that had accepted death now became the strength of wanting to live. — Shirou Emiya
+
+    The things we can't obtain are the most beautiful ones. — Gilgamesh
+
+    Eternity is instantaneous, and an instant is eternal. — Archer
+
+    Righteousness cannot save the world. — Emiya Kiritsugu
+
+    ...a man without fear cannot be wise. — Saber
+
+    I am Gilgamesh, King of Heroes! — Gilgamesh
+
+    There are no regrets. If one can be proud of one's life, one should not wish for another chance. — Saber
+
+    It is the path you have chosen. Take pride in it. — Kotomine Kirei
+
+    Hunger is the enemy, let's eat — Saber
+
+    Power uproot the mountains; Blades, divide the waters! — Archer
+
+    There are worthless things, but there are no meaningless things. — Kotomine Kirei
+
+    You are a hateful woman. You defied me to the very end. But I shall forgive you. Some things are beautiful because they cannot be obtained. King of﻿ Knights, it was truly...fun. — Gilgamesh
+
+[Fate/stay night: Unlimited Blade Works]
+    I won't lose to you. I don't mind losing to somebody else. But I can't lose against myself! — Shirou Emiya
+
+    Idiot?! You know you're an idiot, yet you still call me an idiot?! You idiot! — Shirou Emiya
+
+[Fate/Zero]
+    To win, but not destroy; to conquer, but not humiliate: That is what true conquest is! — Iskander
+
+    There’s no hope on the battlefield. It has nothing but unspeakable despair. Just a crime we call victory, paid for by the pain of the defeated. Yet humanity has never recognized this truth. And the reason for that is, in every era, a dazzling hero has blinded people with their legends and prevented them from seeing the evil of bloodshed. The true nature of humanity has not advanced a step beyond the Stone Age. — Kiritsugu Emiya
+
+    Then you swear that, once I defeat an enemy, you will buy me pants? — Rider
+
+    You really can’t trust books when you don’t know who wrote them. — Rider
+
+    The path of devotion is a great labor. Do not ever mar it. — Gilgamesh
+
+    Did you not understand? All dreams eventually disappear when the dreamers wake. — Gilgamesh
+
+    When you someday find a way of life that you can truly be proud of, you'll be forced into your own battle whether you like it or not. — Rider
+
+    The weight of my sword is the weight of my pride. The wound from my battle with you is an honor, not a fetter. — Saber
+
+    Conflict is humanity's primal instinct. Eliminating it would mean eliminating humanity itself. — Kotomine Kirei
+
+    A king must be greedier, laugh louder, and be more furious than everyone else. — Rider
+
+    To unite dreams under a banner of conquest. I praise your efforts. But, warriors, did you not understand? That all dreams must disappear when the dreamer awakes. Every last one of them. Therefore it was inevitable that I would stand in your way. King of Conquerors, know the end of your eternal dream. I, myself, shall show you this harsh reality. — Gilgamesh
+
+[Clannad]
+    The world is beautiful. Even if you’re full of tears and sadness, open your eyes. Do what you want to do. Be what you want to be. Find friends. Don’t be in a hurry to grow up. Take your time. — Ichinose Kotomi’s parents
+
+    We didn’t give up on our dreams! We changed our dreams into your dream! That’s what parents do! That’s what family does! — Akio Furukawa
+
+    The day before yesterday, I saw a rabbit. Yesterday, it was a deer. And today, it’s you. — Ichinose Kotomi
+
+    No matter how cold and distant people may become, on the inside something warm and precious always remains, something that never changes. To me, that’s what family is like. — Sakagami Tomoyo
+
+    I like you better than a sea slug. I like the sea slug fairly well, so be happy. — Fuko Ibuki
+
+    Life can bring lots of hardships, but it's always important to keep in mind that there are people around you who care for you, and are willing to help you through whatever you're dealing with. — Nagisa Furukawa
+
+    If you wish, would you like me to take you? To a place in this city where wishes come true. — Nagisa Furukawa
+
+    We start to walk up... the long... long.. uphill climb. — Tomoya Okazaki
+
+    Anpan — Nagisa Furukawa
+
+    Make your dreams come true, Nagisa! — Akio Furukawa
+
+    Sanae-san told me, places that I can cry are in a toilet, or in daddy's arms. — Okazaki Ushio
+
+    Are you a bully? — Kotomi Ichinose
+
+    Next time, come in on all fours, so I know you're not a customer. — Furukawa Akio
+
+    Nagisa-chan and Okazaki? What are you two doing in my room? You weren't possibly going to... ...make this your nest of love?! — Youhei Sunohara
+
+    You should cry while you still can. When you get bigger, sometimes, you can't cry even if you have something you wanna cry about. — Okazaki Tomoya
+
+    This is a world that has ended. Nothing is born; nothing dies. Even time does not exist. If I were searching for a place to be born, then I realized it should not be here. — Garbage Doll
+
+    I am horrible! Wait, that makes Fuko the horrible one! — Fuko Ibuki
+
+    No! Fuko is sure you couldn't resist wearing them! The world would end because of you! — Fuko Ibuki
+
+    Love is like a firework from the past... it's more beautiful for it to go to pieces and scatter far off. — Katsuki Shima
+
+    Time and titles do not matter in the bonds between people. — Tomoyo Sakagami
+
+    No matter how depressing a place may look, the most important places don't change. I think there's a similar aspect to family, as well. — Sakagami Tomoyo
+
+    My name is Fujibayashi Kyou. A senior in class E. My hobby is bullying weaklings. I would be happy if you would become my friend — Kyou Fujibayashi
+
+    At this moment, Sunohara had yet to realize he had begun to walk the path of the pervert. — Tomoya Okazaki
+
+    Fuko is utterly shocked! — Fuko Ibuki
+
+[Clannad: After Story]
+    If you feel like crying you shouldn’t hold back your tears. You should let it all out while you still can, because when you get bigger sometimes you can’t cry even if you have something to cry about. — Tomoya Okazaki
+
+    Meeting you was the best thing that ever happened to me. You made me so happy. I don’t want you to be lost or afraid or anything like that. From here on out, I know things might be hard sometimes. But no matter what, please don’t ever regret the time we spent together. — Nagisa Furukawa
+
+    Shall I take you away, to the place where dreams come true? — Furukawa Nagisa
+
+    Sanae-san told me the only places I can cry are in the bathroom and in Daddy's arms. — Ushio Okazaki
+
+    We have sex and sex makes babies! — Nagisa Furukawa
+
+    Nagisa, I found it. I finally found it. Something only I can protect. The precious thing only i can protect. It was... right here. — Tomoya Okazaki
+
+    Tomoya, Nagisa isn’t just our daughter, she’s our hope. So I want you to know that today, you’re part of that hope, too. So never forget that your happiness is our happiness as well. In other words, try your best to be happy, okay? — Sanae Furukawa
+
+    All that, and a toilet! — Youhei Sunohara
+
+    I was worried that you were thinking about how you should've never met me. — Nagisa Furukawa
+
+    If a prediction is right, then it’s like you have one future. Like that future has been decided. But if it’s wrong, then you have an almost infinite number of possibilities, and that the tiniest twist of fate can change your future. I want to believe that I have choices, that the path I walk on has different turns, and many different roads to follow. — Ryou Fujibayashi
+
+    He realized that he had lost sight of something important. No matter what turn he took he should have kept singing. Even if his songs couldn’t save the world, he could still sing songs for her. Don’t ever lose sight of what’s important to you.— Yusuke Yoshino
+
+    There are things a man has to protect even if it kills his pride. — Akio Furukawa
+
+    Will you marry me? — Tomoya Okazaki
+
+    I can't even grant the one wish my only daughter has? — Tomoya Okazaki
+
+    Love is like a firework from the past… it’s more beautiful for it to go to pieces and scatter far off. — Katsuki Shima
+
+    Mommy was a crybaby. — Tomoya Okazaki
+
+    This is the best gift I can give you right now. A gift without form called memory. I don't have money. I can't buy you anything with form. Even so, even without form, a memory will last forever! I believe that it will. — Yusuke Yoshino
+
+    You lit the fire in my heart. Like the FIREBALL!! — Akki
+
+    If you were in my shoes....could you do that? Could you think like that? When you like that person so much! Could you think of it as an opportunity when the person is broken-hearted? — Shima Kastsuki
+
+    I'm glad that i met you, I had a wonderful life, So please don't lose yourself, No matter what may await please don't regret meeting me. — Nagisa Furukawa
+
+    That's sounds wonderful. May I call you Galactic-san? — Furukawa Sanae
+
+    Yu. You're a seed from a flower. You'll be blown away by the wind and start your journey. You're on your way to meet new people in new places. You can't be spoiled by your sister anymore. Even if you're apart, you're still connected by a bond. That's what family is! — Youhei Sunohara
+
+[Clannad: Another World, Tomoyo Chapter]
+    I've already decided.Getting good grades and listening to teachers can take me somewhere high and far away.But what if that's not where I want to go? Right here by your side Tomoya is the only place I want to be! — Tomoyo Sakagami
+
+[Clannad: Another World, Kyou Chapter]
+    If you apologize and I accept your apology, it'll feel like all of this was a joke. I want to make those times a memory. All the fun times. All the hard times. All of them. So please, don't apologize. — Ryou Fujibayashi
+
+[Angel Beats!]
+    Our lives were real! Not a single moment of them were fake! Everyone lived the best they could! We carved those memories into ourselves! Memories of living as hard as we could! No matter what kind they were, they’re the life we led! Erasing them in the blink of an eye like that… Wasn’t your life also real to you?! — Otonashi Yuzuru
+
+    Goodbye wild heaven! — TK
+
+    Get chance and luck! — TK
+
+    Even death can't cure idiocy. — Yui
+
+    Knockin' on heaven's door. — TK
+
+    I put a propulsion engine under your seat just in case you messed up. — Yuri Nakamura
+
+    Even if we forget the faces of our friends, we will never forget the bonds that were carved into our souls. — Yuzuru
+
+    Even if you can’t walk or stand, or even if you can’t have kids! I’ll still marry you! I’ll always stay by your side. The Yui I met here isn’t fake. It’s the real Yui. No matter where or how I meet you, I’ll fall in love with you. If I can meet you again, against the 6 billion to 1 odds, and even if your body can’t move, I’ll marry you. — Hinata Hideki
+
+    Kanade, I love you so much. Let's be together forever. Together, forever and ever! — Yuzuru Otonashi
+
+    If I lost my memories…and got a different personality…I might be able to. But then, what does it mean to be reborn? That isn’t the life I had anymore. It’s someone else’s life. Everyone only gets to live life one time, and it’s right here. I only get it once. This is my life. I can’t entrust it to someone, I can’t steal a new one, I can’t force it on others, I can’t forget it or erase it. I can’t stomp over it, laugh on it, or beautify it! I can’t anything! I’d have to-I’d have to accept my one shot at life no matter how cruel, merciless, or unfair I thought it was! Sir, don’t you understand? That is why I must fight. I must keep on fighting! Because…because I can never… accept that kind of life! — Yuri Nakamura
+
+    Oh man, my heart is pounding! I'm eating snacks in the middle of class! I ate it! I totally ate it! Boldly eating snacks in the middle of class! I'm so reckless! — Ooyama
+
+    That's why I'm singing, Because you are crying because you are lonely, You are right you are human, The tears you shed are saying "Thank you for the beautiful, real me, That is not just some lie" — Iwasawa Masami (My song)
+
+    Now, disapear like the pathetic toilet paper you are. — Naoi Ayato
+
+    Hurry up! You can make it! Oh, run to her and hug her tight! — TK
+
+    Hey, why does this situation look like something at the end of a shonen manga?! — Hinata Hideki
+
+    How shallow-minded — Shiina
+
+    All I wanted to hear was her "thank you" — Yuzuru Otonashi
+
+    You got away with just physical damage, but I'm going to take CRITICAL MENTAL DAMAGE! — Ooyama
+
+    Me? I always do my own thing. I won't be protecting you guys. I just do whatever I want. — Yuri Nakamura
+
+    But please, call me Christ. — Takeyama
+
+    Messing around at night together... This calls for punishment. — Tachibana Kanade
+
+[Angel Beats!: Another Epilogue]
+    You have something you want to do, right? What do you need to accomplish that? What do you need right now? Answer me! One person needed courage to face the past. Another person needed effort to make a dream come true. Yet another person needed time and friends. What about you? — Yuzuru Otonashi
+
+    Then hurry up and do it instead of whining. — Yuzuru Otonashi
+
+[5 Centimeters per Second]
+    The speed at which the sakura blossom petals fall... Five centimeters per second. — Akari Shinohara
+
+    The things I had to tell her, the things I hoped she would listen to... There were so many of them. — Takaki Tohno
+
+    I wonder when I got into the habit of writing messages to nobody. — Takaki Tohno
+
+    At what speed must I live to be able to see you again? — Takaki Tohno
+
+    Through the act of living itself, sadness piles up here and there. Whether in the sheets hung to dry in the sun, the single toothbrush in your bathroom or the history logs of your cell phone. — Takaki Toono
+
+    'Someday we will be able to watch the cherry blossoms together again'. Both of us, without any doubt... That's what we thought. — Akari Shinohara and Takaki Tohno
+
+    Every minute felt like an eternity time, clearly as if it had malicious intent, slowly ebbed away from me, I clenched my teeth and keeping myself from crying was the only thing i could do… — Takaki Toono
+
+    Desperatly, reaching recklessly towards the sky. In search of something almost overwhelmingly far off in the distance. — Takaki Toono
+
+    Will I Ever Meet That Person I love Again ? — Akari Shinohara
+
+    And right then it felt like I finally understood where everything was, eternity, the heart , the soul. It was like I was sharing every experience I’d ever had in my past 13 years. And then, the next moment, I became unbearably sad. I didn’t know what to do with these feeling. Her warmth, her soul. How was I supposed to treat them? That, I did not know. Then right then, I clearly understood that we would never be together. Our lives not yet fully realized, the vast expanse of time. They lay before us and there was nothing we could do. But then, all my worries, all my doubt, started melting away. All that was left were Akari’s soft lips on mine. — Takaki Toono
+
+[Tsubasa Chronicle]
+    The world you can see isn’t all out there. In the world there are alot of fascinating things that no living soul has ever seen! And just in knowing that is one cause for happiness. I’m sure you can find happiness meant for you! It might be something you might not quite understand yet. But you’ll find it, that much is certain! — Fujitaka Kinomoto
+
+    Don't look back. If you got something to do, then only look forward — Kurogane
+
+[Bleach]
+    We are all like fireworks. We climb, shine, and always go our separate ways and become further apart. But even if that time comes, let’s not disappear like a firework, and continue to shine forever. — Hitsugaya Toushiro
+
+    Remember this well. There are two types of fights. As we have put our lives in battle, we must be able to distinguish between the two. The fight to protect life, and the fight to protect pride. — Ukitake Jushir
+
+    BANKAI! — Ichigo Kurosaki
+
+    You humans are always talking about hearts. It’s as if you have them in your hand. But my eye sees everything. Nothing can escape it. What it doesn't see doesn't exist. That’s how I've always thought. What is a heart? If I rip open your chest, will I find it there? If I crack open your skull, will I find it there? — Ulquiorra Schiffer
+
+    Abandon your fear. Look forward. Move forward and never stop. You'll age if you pull back. You'll die if you hesitate. — Zangetsu
+
+    I do not fight because I think I can win. I fight because I have to win. — Ichigo Kurosaki
+
+    Unless I grip the sword, I cannot protect you. While gripping the sword, I cannot embrace you. — Ichigo Kurosaki
+
+    There is nothing in this world that is truly "perfect". Though it may be a rather large cliché, it is still the truth. It is the ordinary people who look up to "perfection" as an ideal and seek after it. But in truth, what is this idea of "perfection" truly worth? Nothing. Not a single thing. I detest "perfection". To be "perfect" is to be unable to improve any further. There would be no scope for imagination, not a single gap in one's knowledge or one's ability. Do you see now? To true scientists like you and I, "Perfection" is tantamount to "despair". We aspire to reach greater levels of brilliance than ever before, but never, NEVER, to reach perfection. That is the paradox through which we scientists must struggle. Indeed, it is our duty to find pleasure in that struggle. In other words, the second you allowed yourself to spout a ridiculous word like "perfect", in truth, you had already been defeated. That is if you wish to be treated as a scientist. — Mayuri Kurotsuchi
+
+    A man who raises his hands on a woman is trash. If I have to become trash in order to survive... It'll be just like dying. — Renji Abarai
+
+    Ichigo, what's the difference between a king and his horse? I don't mean kiddy shit like "One's a person and one's an animal" or "One has two legs and one has four." If their form, ability and power were exactly the same, why is it that one becomes the king and controls the battle, while the other becomes the horse and carries the king?! There's only one answer. Instinct! In order for identical beings to get stronger and gain the power they need to become king, they must search for more battles and power! They thirst for battle, and live to mercilessly, crush, shred, and slice their enemies! Deep, deep within our body lies the honed instinct to kill, and slaughter our enemies! But you don't have that! You don't have those pure, base instincts! You fight with your brain. You try to defeat your enemies with logic! And it doesn't work! You're trying to cut them with a sheathed sword! That's why you're weaker than me, Ichigo! — Shirosaki
+
+    I’m literally hemorrhaging generosity. — Zaraki Kenpachi
+
+    If you were to turn into a snake tomorrow and begin devouring humans, and from the same mouth you started devouring humans, you cried out to me 'I love you,' would I still be able to say 'I love you' the same way I do today? — Gin Ichimaru
+
+    Emotions? Nope, I've got nothin' like that. I told you when we first met, didn't I? I'm a snake. With cold skin, no emotions, that slithers around searching for prey with its tongue, swallowing down whatever looks tasty. — Gin Ichimaru
+
+    Trusting in someone is the same as depending on them. That is something the weak do. We have no use for it. — Sousuke Aizen
+
+    I'm not superman, so I can't say anything big like I'll protect everyone on earth. I'm not a modest guy who will say it's enough if I can protect as many people as my two hands can handle either. I want to protect a mountain-load of people. — Ichigo Kurosaki
+
+    You know why big brothers are born first? To protect the little ones that come after them — Ichigo Kurosaki
+
+    With your ability, you will find it impossible to make me fall on even one knee. — Byakuya Kuchiki
+
+    Sanity...what would i do with a useless thing like that. — Zaraki Kenpachi
+
+    The betrayal you can see is trivial. What is truly fearsome, is the betrayal that you don't see, Captain Hirako. — Sousuke Aizen
+
+    I'M NOT AN ELEMENTARY STUDENT!!! — Hitsugaya Toushirou
+
+    If miracles only happen once, what are they called the second time? — Ichigo Kurosaki
+
+    I'm not gonna have it, Ichigo. I don't know about Zangetsu, but I refuse to carry a king who's weaker than me and get cut to ribbons with him. If you're weaker than me, then I'll destroy you, and take your crown for myself. — Shirosaki
+
+    Beautiful Charlotte Chuhlhourne's Perfect Stylish Dangerous Psychedelic Valuable Economical Continental Incredible Unbelievable Shining ATTACK! — Charlotte Chuhlhourne
+
+    There is no individual sense of justice that can overrule the justice of the world. — Genryusai Yamamoto
+
+    Never admit defeat and ask for a quick death! Die first, then admit defeat! If you are defeated but didn't die, it just means you were lucky! At those times, think only about survival! Survive and think only about killing the one who failed to kill you! — Kenpachi Zaraki
+
+    In a battle, the ones who get in the way are not the ones that lack power, but the ones that lack resolve. — Rukia Kuchiki
+
+    I'm so disappointed, Ichigo, so very disappointed. Sadly, your sword exhibits only fear. When you counter, it's because you fear being killed. When you attack, you fear killing. And when you protect someone, you fear you could let them die. At this point, the only thing your sword speaks is senseless fright, and that's not good. What you don't need in battle is fear. Nothing will come of it. When you attack, you don't let them cut you. When you protect someone, you don't let them die. And when you attack, you kill. — Kisuke Urahara
+
+    In my eyes, there is no difference between wiping away one speck of dust or two. — Sousuke Aizen
+
+    Ideals of perfection doesn't exist. What exists of the following ideas is the discovery that these things are impossible to realize, the loss of hope. But it is with despair that can reach your greatest hidden power. It is the despair that breaks its limits. Frees his heart to act as you wish. Who has the power is going to dictate the rules! Even if that power is black and ugly. By winning, this blackness becomes the color of real justice! — Kouga Kuchiki
+
+    I cannot begin to repay the debts I owe you. Such is my gratitude. However, you are an enemy of Ichigo Kurosaki. Debt or not, I feel no remorse in cutting you down. — Byakuya Kuchiki
+
+    You thought you could destroy me by striking with power? How naive. ...No, perhaps we differ in our basic understandings of the word "power". I shall enlighten you. This is what is known as "power". — Sousuke Aizen
+
+    It’s always a lot easier to let something fall apart than it is to try to hold it together. — Yumichika Ayasegawa
+
+    I've decided. I'm going to become a Shinigami. Become a Shinigami and change things. So that they'll end...without Rangiku having to cry. — Gin Ichimaru
+
+    To fight...Or to live...Choose. — Zangetsu
+
+    Death and pain are just a small price to pay for the enjoyment of battle! — Zaraki Kenpachi
+
+    Dammit, I'll show you who's more skilled with his language skills! — Kurosaki Ichigo
+
+    Though you fight a fierce battle on the outside, your inner world trembles not the slightest. — Zangetsu
+
+    You must never die alone. We entrust our hearts to our friends. If you entrust your heart to your friends it will continue to live on inside them. — Kaien Shiba
+
+    "Control"... you say? When you stand before me... that word holds no meaning. Bankai. Senbonzakura Kageyoshi. — Kuchiki Byakuya
+
+    I hate perfection. To be perfect is to be unable to improve any further. — Kurotsuchi Mayuri
+
+    Don't use such strong words -- It makes your weakness all the more apparent. — Sousuke Aizen
+
+    Blah blah blah! You're noisy! Just come on and fight already. It's best if all four of you come together. If you four surround me and attack at once, maybe one of you will actually wound me. — Kenpachi Zaraki
+
+    "You want a reason...for fighting? Why don't you just accept it already! You seek out fights. You desire power. Isn't that right, Ichigo? — Kenpachi Zaraki
+
+    Farewell, warrior of the sky. I would appreciate it if you would not forgive me. — Izuru Kira
+
+    What a punchline, no... that was just a punch. — Tatsuki Arisawa
+
+    You're slow, even when you're falling. — Kuchiki Byakuya
+
+    Desiring power is dangerous. — Kuchiki Kouga
+
+    Ken-Chan! — Kusajishi Yachiru
+
+    The name is Ichigo. I'm the one who's gonna beat your ass. How's it going? — Ichigo Kurosaki
+
+    Feel the wrath of my blade! — Ichigo Kurosaki
+
+    Laws exist only for those who cannot live without clinging to them. — Sousuke Aizen
+
+    As if I care about what becomes of the things you want to protect. Make no mistake, Ichigo. The things that you wish to protect are not the things that I want to protect — Zangetsu
+
+    Abandon your fear. Look forward. Move forward and never stop. You'll age if you pull back. You'll die if you hesitate. — Zangetsu
+
+    Unless I grip the sword, I cannot protect you. While gripping the sword, I cannot embrace you — Ichigo Kurosaki
+
+    I do not fight because I think I can win. I fight because I have to win. — Ichigo Kurosaki
+
+[Soul Eater]
+    FOOLS! — Excalibur
+
+    A sound soul dwells within a sound mind, and a sound body. — Maka Albarn
+
+    Do you want to know where the real hell is hiding? It’s inside your head. — Crona
+
+    I do not deny evil, nor do I believe that any human is completely free of malice. Everything must be in balance. As long as evil and good maintain an equilibrium in this world there is no problem. Perfect balance is the key to everything. — Death The Kid
+
+    I will be the Man who will surpass God. — Black Star
+
+    Humans don't fear death... They fear the pain of imaging Death... — Asura
+
+    Symmetry is my aesthetic. — Death the Kid
+
+    No it can't be seven say eight dammit! Eight is better! It's physically impossible to cut the number seven in half and make it symmetrical! It has to be eight instead! Eight cut vertically or horizontally stays perfectly symmetrical! Take it back I beg of you! Please say eight! PLEASE! — Death the Kid
+
+    How can woman say completely illogical stuff with such complete confidence?! — Soul Eater Evans
+
+    After all. Cool men don't cheat on their partners do they? — Soul Eater Evans
+
+    In the end the shape and form don't matter at all, it's only the soul that matters right? Nothing else. — Soul Eater Evans
+
+    Excalibur, Excalibur From United Kingdom I'm looking for him I'm going to California Excalibur, Excalibur From United Kingdom I'm looking for her I'm going to California Excalibur Excalibur Excalibur! — Excalibur
+
+    If what you really want is to be free from fear... Then strengthen your soul and always balance good and evil. — Death the Kid
+
+
+    You're stubborn and reckless, all you like to do for fun is read so you're boring, and you have fat ankles. — Soul Eater Evans
+
+    Symmetry is what makes the world beautiful. — Death The Kid
+
+    It's okay, cool guys see naked women all the time, I'm totally used to it — Soul Eater Evans
+
+    We might be scared, but that's what makes us stronger! — Maka Albarn
+
+    As a cool guy, I'm used to seeing naked women. — Soul Eater Evans
+
+    MAKA CHOP! - Maka Albarn
+
+    I am Tsubaki, a flower without fragrance. When I fall it will be silent and tragic — tsubaki nakatsukasa
+
+    Just look Patty! Your stance is off again! The two of you aren't in a line — Death the Kid
+
+    I never said I was a witch, did I? You just made that assumption all on your own. I'm really just a cat with a ridiculous amount of magical power. — Blair
+
+    We're hunting after a legendary sword. Finding a fairy or two shouldn't be surprising. — Death the Kid
+
+    Ooops....My finger slipped. — Death The Kid
+
+    You know what they say: when in Rome, eat lots of pasta — Soul Eater Evans
+
+    I am your weapon partner, Maka! That means I'm always prepared to die for my Meister! — Soul Eater Evans
+
+    If you pick a fight with a god of death, I can’t guarantee your soul’s safety. — Death the Kid
+
+    it doesn't matter who they are, i wont forgive anyone who tries to stand out more than me — Black☆Star
+
+    All the more reason to dissect one, before the whole species dies off. — Dr.Franken Stein
+
+    Do you know of my hat? — Excalibur
+
+    Your soul is mine! — Soul Evans
+
+    Get your ass moving Kid! — Patricia Thompson
+
+    This guy's a special kind of stupid. — Death The Kid
+
+    Soul! Soul! Are you okay?! It's going to be alright! Black Star is here for you now! Open your eyes! One look at my big handsome face and you'll be cured for sure! — Black☆Star
+
+    Stars. Don't. Clean. — Black Star
+
+    My legend dates back to the 12th Century you see. My legend is quite old. The 12th Century was a long time ago. — Excalibur
+
+    If you forget your fear you become reckless. — Soul Evans
+
+    Stop looking at my soul you creep! — Maka Albarn
+
+    I'm not going to let myself get beaten by a jar! — Black Star
+
+    Excuse me... I'm not a microphone! I'm a chain scythe. — Tsubaki Nakatsukasa
+
+    I was wondering. Do souls taste good? You seem to like 'em. — Maka Albarn
+
+    You don’t understand anything, do you?! The most important thing isn’t power, it isn’t courage, it isn’t even having friends! The only thing that matters is that you can rely on ME. — Black☆Star
+
+    I think I'd like to dissect you now! — Dr.Franken Stein
+
+    We have to find a way to face this scar. — Maka Albarn
+
+    I am the great assassin Black Star! And I've come here to assassinate you all! — Black Star
+
+    Courage isn't special. But that means everyone has it — Maka Albarn
+
+    What's the point of worrying about the past? A real star keeps moving forward. — Black Star
+
+    I'm just a dude who's way ahead of his time, you know? Does that mean I was born too early because time can't keep up with me? — Black☆Star
+
+    As far as I know music isn't picky about when it gets played. — Soul Evans
+
+    Why do girls always avoid all sense of logic whenever they talk about things? — Soul Eater Evans
+
+    42-42-564 whenever you wanna knock on deaths door. — Maka Albarn
+
+    Are you scared? I understand. The first time I saw my reflection in the mirror, even I was frightened by how BIG my reflection was. — Black Star
+
+    I'm going to keep fighting until this world is the way it should be. Until the world is balanced. — Death The Kid
+
+    I hope it's a cool morning. That's how cool days always start out. And a cool guy like me deserves the coolest morning possible. — Soul Evans
+
+    Souls are so yummy. — Soul Evans
+
+    He's seriously crazy, he must be insane. — Maka Albarn
+
+    What kind of fun does he mean? Just what kind of girl does he think I am!? — Maka Albarn
+
+    Sometimes I'm such a big star I can't handle it. — Black☆Star
+
+    Hey Soul, let's piss on Sid's grave! — Black☆Star
+
+    If it's fear that you speak of, then I'll stand and face it. I'll never give up. The only time I lose is when I die! — Black☆Star
+
+    Black Star, it's over between us. — Soul Evans
+
+    Just look at it Liz, Patti, just look at how the clouds are! Flowing right towards the sun! It's so beautiful, even the sky is symmetrical! — Death The Kid
+
+    I don't like it, the dark circles under my eyes will come back and I don't know how to deal with the dark circles! — Crona
+
+    Silence means approaching quietly! — Tsubaki Nakatsukasa
+
+    I'm Black Star. I'm on a whole different level than you. I'm a big man! I beat death! Who else can say that?! — Black Star
+
+    It doesn't hurt! It's not hot! I'm not scared! I will not be beaten! — Maka Albarn
+
+    I refuse to let my fear control me anymore. — Maka Albarn
+
+    I Am Your Weapon ,So use Me As Your Weapon — Soul Eater Evans
+
+    My autograph will do you a lot more good then any food and medicine will. Now sit still! — Black Star
+
+    What are you smoking? Don't you see how cool I am? You think I'm going to settle for a flat chested girl like her? — Soul Evans
+
+    I'm hungry! can we just get his damn zombie soul already? — Soul Evans
+
+    The legendary super-skill of the Scythe-Meister! Witch Hunter! — Maka Albarn
+
+    Tornado Flip! — Death The Kid
+
+    Giraffe! Giraffe! I love Giraffes! — Patricia Thompson
+
+[Nagi no Asukara]
+    "If his an asshole, I'm going to punch him!" "And if he ends up being a decent guy?" "I'll Punch him gently!" — Hikari Sakishima
+
+    Because it doesn't matter.Because they're people I don't care about,they have nothing to do with me...And I don't care what they think of me. — Miuna Shiodome
+
+    Being in love is a difficult situation. Too much to bear, you can't help it. You can't control yourself, to the extent that you're sad and in pain, and your heart is full. — Uroko-sama
+
+    We aren't fish, and they aren't pigs! — Hikari Sakishima
+
+    Sorry for causing a stir so early in the morning. I just confessed my feelings to your daughter. — Kaname Isaki
+
+    I mean... everyone can only do what they can. If you try hard at something you can't do, it only hurts in the end. — Tsumugu Kihara
+
+    Everyone... is precious to someone! Please don't forcefully rip apart those who love each other! If you insist of taking someone... take me instead! — Manaka Mukaido
+
+    Miuna! Let's fry him up! We'll make him into takoyaki! — Sayu Hisanuma
+
+    I just can't beat her. — Chisaki Hiradaira
+
+    Love is like the sea. — Manaka Mukaido
+
+    The damn media got me dancing to their tune. — Hisanuma Sayu
+
+    I don't think boys that are too intuitive are very popular. — Chisaki Hiradaira
+
+    Wish we will never change..... — Chisaki Hiradaira
+
+[Sword Art Online]
+    If we make it back to the real world. I’ll find you again. And fall in love with you again. — Asuna
+
+    Even if I die, you keep living okay? Live to see the end of this world, and to see why it was born. Live to see why a weak girl like me ended up here… And the reason you and I met — Sachi
+
+    I'd rather trust and regret than doubt and regret. — Kazuto Kirigaya
+
+    You know, if you married someone, that means you love every side of your significant other that you know already. So if you find a new side after to love, doesnt that mean you’ll love your partner even more? — Kirito
+
+    Levels are just numbers. In this world, strength is just an illusion. — Kazuto Kirigaya
+
+    I too, was looking for something. Something real in this world. For me, it was the warmth of your hand. — Lizbeth
+
+    If you die, I'll kill myself — Asuna
+
+    You can go anywhere you want in this world with a single blade. This may be a virtual world, but I feel more alive here than in the real world. — Kazuto Kirigaya
+
+    Just so we're clear, I'm a solo player. One or two days of being orange means nothing to me. — Kazuto Kirigaya
+
+    The main reason I got stronger was so I’d be able to survive. — Kazuto Kirigaya
+
+    Life isn’t so bad. It’s not so bad. — Nishida
+
+    A weak weapon...it's light, without any reach. But it's more than enough to kill you! — Kazuto Kirigaya
+
+    A person is very strong when he seeks to protect something. I’ll expect a good fight. — Heathcliff
+
+    It's time to finish this fight. Between the king of thieves and a gilded hero! — Kazuto Kirigaya
+
+    I cried alone every single night. It felt like every day that passed here stole another piece of my real life away. After i cried, I’d go and fight as hard as I could. My only thought was winning, moving forward, and getting stronger. — Asuna Yuuki
+
+    I’d rather stay myself until the very end than sit and rot away at an inn, back in the first town. Even if I get killed by a monster, I don’t want to lose to this game…to this world… No matter what! — Asuna Yuuki
+
+    Your attacks have no soul...the blades in that world hit harder. They hurt far more! — Kazuto Kirigaya
+
+    Rather than leaving someone to die, I'd much rather die together with them. — Kirigaya Kazuto
+
+    Beater, huh? Sounds good to me. — Kirito
+
+    I was just dreaming a little. About my old world. It’s strange… In the dream, I wondered if everything here, in Aincrad, if everything that had happened with you, was only a dream. I was really scared. I’m happy this wasn’t a dream. — Asuna Yuuki
+
+    Never. I'll never let anyone in my party die as long as I'm standing. That's the last thing I'd let happen! — Kazuto Kirigaya
+
+    Summon item, Excalibur. — Kirito
+
+    Thank you, Good bye. — Sachi
+
+    I'm sorry, but i have a request. I don't plan on losing. But if I die here, I wan't you to make sure Asuna can't kill herself, just for a little while. — Kazuto Kirigaya
+
+    My life is yours, Asuna. So I'll live for your sake. Until the very end, let's be together! — Kazuto Kirigaya
+
+    Regardless of what may come, I will send you back to the real world. — Kazuto Kirigaya
+
+    LINK START! — Kazuto Kirigaya
+
+    If you'd rather settle this with swords, that's fine by me — Kazuto Kirigaya
+
+    "It hurts"? This is nothing compared to the pain you've inflicted upon Asuna! — Kazuto Kirigaya
+
+    Star Burst Stream!!! — Kirito
+
+    There's no meaningful difference between a real and a virtual world. It's pointless to ask anyone who they really are. All you can do is accept and believe in them. — Kazuto Kirigaya
+
+    I won´t forgive you until you buy me a meal on the other side! — Klein
+
+    Asuna. Today... Tonight, I want to be with you. — Kazuto Kirigaya
+
+[Lucky☆Star]
+    You watch too much anime. — Hiiragi Kagami
+
+    I've been lamenting my lack of a chest for a while but then this game said "A flat chest is a status symbol! A rarity!" Word for word. And when you think about it there is a demand, right? Which means I'm valuable! — Izumi Konata
+
+    When you learn something from Tsukasa, it feels like you've really failed. — Konata Izumi
+
+    Oha-Lucky~! — Akira Kogami
+
+    As time goes by without anyone eating it, it starts getting dry and looking anything but appetizing, and no one’s willing to make a move, but when the busboy takes it you go ‘wait, we’re not done with that yet.’ kinda on reflex. but then you end up leaving without eating it. — Konata Izumi
+
+    I'm not interested in ordinary menus. — Konata Izumi
+
+    Whenever people are training their dogs, I hear them say “chin-chin” all the time – what’s that mean? — Hiiragi Tsukasa
+
+    I shouldn't look at my friends with such perverted eyes! — Hiyori Tamura
+
+    By the way, which end is the head? The fatter end, or the thinner end? — Konata Izumi
+
+[Sakurasou no Pet na Kanojo]
+    I believe in panties — Mashiro Shiina
+
+    Plan C, Cut her up - Mashiro Shiina
+
+    Is this friendship you speak of is so weak that it would disappear with the demolition of a single building? — Ryuunosuke Akasaka
+
+    You can't move others hearts, unless you can move your own. — Kazuki Fujisawa
+
+    Everyday was the same. Deep down, I felt bored. I wanted to blame someone for my being bored. — Sorata Kanda
+
+    Panties aren't powerful enough to solve all the problems we've go here — Sorata Kanda
+
+    This area feels weird, it's been throbbing hard since that time. When you told me not to go. When you held me so tight. It won't go away. Your voice is still in my ear. What happened to me? Is this...love? — Mashiro Shiina
+
+    What color do you want to be? — Mashiro Shiina
+
+    No panties, no life! — Misaki Kamiigusa
+
+    stupid sorata — Mashiro Shiina
+
+    How on Earth can you get a zero in English when you lived in England? — Sorata Kanda
+
+    There are some things you can’t say to someone, no matter how close you are — Nanami Aoyama
+
+    Love is simply a bug in the human neural circuit. — Ryuunosuke Akasaka
+
+    Sorata no baka. — Mashiro Shiina
+
+    Opportunities wait for no one! If you let an opportunity slip through your fingers with an excuse like, “I wasn’t prepared.” You’ll never get another opportunity like that again! But it is your life. Live it the way you want. — Sorata Kanda
+
+    Dividing an impossibly large task into smaller solvable problems is a programmer's job. — Ryuunosuke Akasaka
+
+    The times I was with you were the best times of my life! — Ainsworth Rita
+
+    You’ll start hating life if you do what you hate. — Chihiro Sengoku
+
+[Gosick]
+    I read books to pass the time, when I am bored. — Victorique de Blois
+
+    Idiot. — Victorique de Blois
+
+    The wellsrping of wisdom told me — Victorique de Blois
+
+    You were chosen as a single fragment with which I will fill up my boredom. — Victorique de Blois
+
+    No matter how the world changes, we'll never be separated again. — Victorique de Blois, Kujo Kazuya
+
+    You are my heart, if you die, I will die too — Victorique de Blois
+
+    I'll take fragments from the chaos of this world... and using the fountain of wisdom inside me, will reconstruct them into truth. — Victorique de Blois
+
+[Hyouka]
+    I don't do anything I don't have to. Whatever I have to do, I do quickly. — Oreki Houtarou
+
+    I'm curious! — Eru Chitanda
+
+    'Shortcut'... what a lovely word! — Oreki Houtarou
+
+    The more inexperienced you are, the more you want to show off. — Oreki Houtarou
+
+    I'm not against socializing, so long as it's not tiring. — Houtarou Oreki
+
+    I'm not lazy, I'm just conserving energy. — Houtarou Oreki
+
+    I find myself hard to understand sometimes. — Eru Chitanda
+
+    There are things in this world best left forgotten — Eru Chitanda
+
+    Whatever I do, I'll always be me. I won't tone myself down to fit in. — Satoshi Fukube
+
+    It pisses me off so much! But what pisses me off the most is that I still love him! Alright, Chii-chan! Let's go stuff ourselves with cake! — Mayaka Ibara
+
+    His brain, I feel like i want to open it up and take a peek inside. — Eru Chitanda
+
+    I'm not stupid. I'm just too lazy to show how smart I am. — Houtarou Oreki
+
+    A database can't draw conclusions. — Satoshi Fukube
+
+    A joke only lasts a moment; if it leaves a misunderstanding, it becomes a lie. — Satoshi Fukube
+
+    If you can never get angry at anything, that probably means you have nothing that you like, either. — Chitanda eru
+
+    We don't know if trying our best will help, but we do know, that if we don't try our best, it won't help for sure! — Chitanda Eru
+
+    A student will only get called to staff room for something bad........by my experience. — Houtarou Oreki
+
+    I'm just a bit, you know...curious. — Houtarou Oreki
+
+    My energy conservation policy... is being totally shattered. — Houtarou Oreki
+
+    No amount of passion can overcome a lack of technical expertise. — Fuyumi Irisu
+
+    Have they forgotten that I'm here? — Houtarou Oreki
+
+    Surely there must be students who want a 'gray' life... — Houtarou Oreki
+
+[Sola]
+    Don't tell me you've fallen for me.... — Matsuri Shihou
+
+    Don't you know? All machines can be fixed with a swift kick. — Matsuri Shihou
+
+[Nichijou]
+    Arriving by goat doesn't violate school policy! — Kojiro Sasahara
+
+    God is dead. — Yuuko Aioi
+
+    Our everyday lives may in fact be a series of miracles — Sasahara Koujiro
+
+    Sakamoto told me to do it. — Hakase
+
+    Superultragreatdeliciouswonderfulbad — Yukko
+
+    Superultragreatdeliciouswonderfulyabai - Yukko
+
+    Selamat Pagi! — Yuuko Aioi
+
+    Your right hand is a loser. — Hakase Shinonome
+
+    I'm finally getting used to this body. — Parakeet
+
+    Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! Nano! — Professor
+
+    NO FUTURE!!! — sensei
+
+    I have commited a petty murder. — Yuuko Aioi
+
+    I want to go back to the time before I knew right from left. When everything seemed so new... And I'll tell myself to stay like that. — Yuuko Aioi
+
+    Robots are cute! — Shinonome Hakase
+
+    Professor! Professor! Professor! Professor! Professor! Professor! Professor! Professor! Professor! Professor! Professor! — Nano Shinonome
+
+    Your jam was so disgusting, my life flashed before my eyes! — Mio Naganohara
+
+    I didn't buy this one just because you recommended it! — Misato Tachibana
+
+[Tegami Bachi: Letter Bee]
+    It doesn’t matter that you can never touch the stars,what matters is that you are always reaching for them — Jiggy Pepper
+
+    You're the first man who's ever made me wear pants — Niche
+
+[Letter Bee Reverse]
+    I Have To Deliver The Letters of people who cant Reach Others They Love — Lag Seeing
+
+[Rozen Maiden]
+    To live is to fight. — Shinku
+
+    In the eyes of the weak everyone is strong, but i am truly strong. — Shinku
+
+    i am not junk — Suigintou
+
+    For a servant, this is the first time you've been useful, Jun. — Shinku
+
+[Mahou Shoujo Madoka★Magica]
+    If you ever feel like dying to help the universe, just let me know. I'll be waiting. — Kyuubey
+
+    Don’t forget. Always, somewhere, someone is fighting for you. As long as you remember that, you are not alone. — Madoka Kaname
+
+    If it’s for your sake, I have no problem being trapped in this maze for eternity. — Akemi Homura
+
+    Protect the one thing you want to protect until the end. — Kyouko
+
+    With kindness comes naïveté. Courage becomes foolhardiness. And dedication has no reward. If you can't accept any of that, you are not fit to be a magical girl. — Homura Akemi
+
+    If someone tells me that it's wrong to have hope, I would tell them that they're wrong. I would keep saying that forever, as many times as necessary — Madoka Kaname
+
+    Miracles aren't free. When you wish for hope, it creates an equivalent despair. That is how the balance of this world is preserved. — Kyouko Sakura
+
+    Make a contract with me, and become a magical girl! — Kyuubey
+
+    It begins with a prayer and ends with a curse — Kyuubey
+
+    You shouldn't want to be like me, I'm just trying to act cool. No matter how scary it is, how hard it is, I can't talk to anyone about it. I always cry alone. Being a Magical Girl isn't good at all. — Mami Tomoe
+
+    In our culture, the phenomenon called emotion is only a mental disorder. — Kyuubey
+
+    Don't confuse gratitude with responsibility — Homura Akemi
+
+    I'm not scared of anything anymore. — Tomoe Mami
+
+    You’re not just granting hope. You’re becoming hope itself! — Mami Tomoe
+
+    We're fighting for our own wishes. It's normal not to get noticed or remembered. — Homura Akemi
+
+    Hey...How about we become monsters together...and lay waste to this awful world? We'll wipe out everything...all traces of evil or sadness...and just destroy, destroy, destroy...until there's nothing left but dust. — Homura Akemi
+
+    I was stupid... So stupid... — Sayaka Miki
+
+    Why is it that when humans regret the decision based on a misunderstanding they feel resentment toward the other party? — Kyubee
+
+    On this planet, you call females that have yet to become adults, girl. It makes sense then, since you'll eventually become witches, to call you magical girls. — Kyuubey
+
+    Kindness can bring you even bigger troubles. — Akemi Homura
+
+    If you're just living for your own sake, it's all up to you. No hard feelings. No regrets. — Sakura Kyouko
+
+    I'll repeat it. I'll continue to repeat it over and over. Visiting the same time again and again, searching for the single exit out. Searching for the path to save you from a fate of despair. — -Homura, Akemi
+
+    Even though I've lost my way, I will save you. — Akemi Homura
+
+    I want them to keep their smiles even to the end! And those rules that hinder me from doing so... Watch me break them. Watch me change them. That is my wish. — Madoka Kaname
+
+    Being an adult is hard for everybody. That's why they let you drink. — Kaname Junko
+
+[Danshi Koukousei no Nichijou]
+    There’s no reason to pretend to be cool. Let’s show our lame sides. That’s who we really are, after all. — Hidenori Tabata
+
+    The wind is troubled today. — Hidenori Tabata
+
+    I wonder if nipples grow back. — Yoshitake Tanaka
+
+    My name is Jack. — Hidenori Tabata
+
+    Tadakuni takes 5 damage. — Yoshitake Tanaka
+
+    I’m a horrible human being for deceiving a stupid girl like that just to see her panties! — Motoharu
+
+    All right, here comes my poser phrase. — Hidenori Tabata
+
+    If you don't die right now, I'll kill you! If you don't wanna get killed, then die! — Tadakuni's younger sister
+
+    Those aren’t tears of sadness. They’re tears of happiness, right? Let us make haste, lest the wind ceases. — Hidenori Tabata
+
+    I've been punched by a girl at a riverside before! — Tadakuni
+
+    Any problems with high school boys can generally be traced back to their mothers. Because they were originally part of their mothers. — Yoshitake Tanaka
+
+    But, the wind… is ever so softly weeping. — Yassan
+
+    This is an anime about normal everyday life! Mobile suits and tales of adventure don’t come into it! — Tadakuni
+
+    I don’t know exactly what I won, but I won! — Ringo
+
+    This is bad. I’m surrounded by older girls. At this rate… I’ll be toyed with. — Motoharu
+
+    I ate Twitter. — Tanaka, Yoshitake
+
+    My everyday life with my idiotic, hopeless, and self-conscious friends still continues! — Tadakuni
+
+    Right, I have something I have to apologize to Mitsuo for. Sometimes, when we were playing, you’d suddenly start crying, and then you’d run home. You probably thought you’d fooled us, but everyone knew… that you had pooped your pants! Sorry. — Motoharu
+
+    Why did you fall for the same trick twice?! Are you retarded?! — Yoshitake Tanaka
+
+    I’ve been reading manga lately. In everything I read, some kids around our age are thrown into some bloody battle. What about us? Nothing’s really happened, right? — Hidenori Tabata
+
+    Are you listening, you Salmonella bacteria? — Yanagin
+
+    There's no point if you don't equip your weapon. — Hidenori Tabata
+
+    Unless you gift-wrap your own finger and hand to him, or show him your panties, his anger will never subside. — Ikushima
+
+    No. — Karasawa Toshiyuki
+
+    Imouto! — Hidenori Tabata
+
+    This means that I look like an introverted, lonely otaku?! — Tabata Hidenori
+
+[GJ-BU]
+    Meat is important. Eat plenty. Become enlightened. — Kirara Bernstein
+
+    I'm not tasty! Please don't lick me! — Megumi Amatsuka
+
+    I don't have anything to say to people who won't give me cake. — Tamaki Kannadzuki
+
+    Some teachers were real suckers for it though. — Mao Amatsuka
+
+[Gochuumon wa Usagi Desu ka?]
+    I'll do my best as a big sister! — Cocoa
+
+[No Game No Life]
+    The world has finally bugged out. — Shiro and Sora
+
+    Throughout all of history, no wise king has ever forced his army to obey him through oppression. People will only truly fight for what is right. And there is only one thing that is truly right in this world! The one true, unchanging righteousness in the world is... cuteness! Cute makes right! All our needs, desires, and instincts seek cuteness, and it is for cuteness that we will give everything we have! That's just the way men are! — Sora
+
+    This world is just… a crappy game. — Shiro and Sora
+
+    "In reality, the least interesting answer is usually the correct one." — ~Narrator
+
+    "What kind of king makes his men fight at the front line while he sits behind them relaxing?" — Sora
+
+    Cute makes Right! — Sora
+
+    When it comes to war and killing, we have far more expertise than you do. — Sora
+
+    Whether were up against elves or god, blank never loses — Sora
+
+    I used to be a gamer like you. Then I took and arrow in the knee... — Sora
+
+    You're not allowed to quit while you're ahead. — Shiro
+
+    Only an idiot starts a fight he can't win. — Sora
+
+    Hey, Shiro. They say people can change, but is that really true? If they decide they want to fly, will they grow wings? I don't think so. You don't change yourself. You change how you do things. You have to make your own way. You have to create a way to fly, even while you stay the same. Let's think of a way to make wings that will let you fly. We can take our time. — Sora
+
+    I don't believe in humanity. Humans are lowly, stupid creatures. Every single one of them. Including me. — Sora
+
+[Isshuukan Friends]
+    Math is like a puzzle, or a game. There's one answer, and you're going on an adventure to find it. But there's many differient paths you can take, so it's really rewarding when you reach the goal. Sometimes, it takes a bit of insight. Other times, you can craft your own method. Even the most convulted methods can get you to the answer. No matter how ugly your solution may be, the fact that you constructed something yourself is something to be proud of. — Fujimiya Kaori
+
+    I'd like for us to be friends! — Yuuki Hase
+
+[Hoshizora e Kakaru Hashi]
+    I love you, Ui — Kazuma Hoshino
+
+    Understood! — Daigo Minamikokubaru
+
+    "Do it", or "Please do it": Take your pick! — Hina Sakai
+
+    Please let me do it! — Kasane Toudou
+
+    Onii-chan, concentrate! — Ayumu Hoshino
+
+    Hoshino, if you have something you want to say, you should speak up about it. — Hina Sakai
+
+    I love Kazu-kun, too! — Ui Nakatsugawa
+
+    But... — Ui Nakatsugawa
+
+    This is very delicious! — Tsumugi Toudou
+
+    We were rejected. — Madoka Koumoto
+
+[OreImo]
+    It was a thoroughly terrible game from beginning to end. Please tell the creator to go die. — Ruri Goko
+
+    You were in your sister's room, using your sister's computer to play a game about doing indecent things to your sister? — Kousaka Daisuke
+
+    It's way beyond that level. Tsun 100%, dere 0% — Kirino Kousaka
+
+    What are you talking about, dear mother? Look at this screen, with its clear skies as clean as my heart! — Kyousuke Kousaka
+
+    Its just an anime... — Kyousuke Kousaka
+
+    Friends expect nothing in return! — Kyousuke Kousaka and Kouhei Akagi
+
+    Human relationships come with trouble included. — Saori Makishima
+
+    This world is full of things that defy all common sense. — Kousaka Kyousuke
+
+    Thank god for the emergency escape Key! — Kyousuke Kousaka
+
+    I like homos! I like them a lot! I love them! — Kōhei Akagi
+
+    You're a fake. You see, my sister would never wake me up or cook breakfast or do my laundry. In fact, she completely looks down on me and treats me like an idiot, or outright ignores me! She doesn't listen to a word I say! There's no way she'd come into my room like this to make me up! Basically, what I'm trying to say is... There's no way my sister can be this cu... — Kyousuke Kousaka
+
+[Kore wa Zombie Desu ka?]
+    If i die make me a penguin. I like penguins. — King of the night
+
+    Most people live their lives without ever realizing it. — Ayumu Aikawa
+
+    I like the "Swallow Reversal" secret sword technique. I am skilled at using the "Swallow Reversal" secret sword technique. My whole life was the "Swallow Reversal" secret sword technique. — Seraphim
+
+    That's interesting. Don't do it again. — Eucliwood Hellscythe
+
+    By the way, I'm a zombie. — Ayumu Aikawa
+
+    Nomobuyo, Oshi, Hashitawa, Dokeda, Gunmīcha, Dē Ribura! — Haruna
+
+    The beauty of the stars never changes. However, stars that change are beautiful as well. — Eucliwood Hellscythe
+
+    I mean, chicks are cool for some things. You know what I'm talking about? But I'm in the mood for a bro job — Orito
+
+    I'm a genius magical garment girl remember — Haruna
+
+    They say that idiocy can only be cured by death. I was an idiot. Boredom might be a luxury, but it’s no fun. Loneliness might be peace, but then you cannot share your joy with others… thank you. My life changed because you killed me. — Ayumu Aikawa
+
+    This choking sensation is to die for! — Haruna
+
+[Ro-Kyu-Bu!]
+    Elementary schoolers are the best! — Subaru Hasegawa
+
+[The "Hentai" Prince and the Stony Cat]
+    Viva, flat chests! — Youto Yokodera
+
+    D-Does she have to make such lewd noises with each rep? — Youto Yokodera
+
+    Hello, is this the police? I'd like to report a loli-pedo hybrid pervert in the neighborhood. — Tsukiko Tsutsukakushi
+
+    You are, to the very last second of the very last cut of the very last episode... a Hentai-san, Senpai. — Tsukiko Tsutsukakushi
+
+    It's hard to make girls smile when you're older too, but make sure you never make a girl cry. — Youto Yokodera
+
+    Oh, I know! Why don't we play strippy-strip before we see your mom? — Youto Yokodera
+
+    This man will now choose between life and death. Dead or Die. — Tsukushi Tsutsukakushi
+
+    I'm not a Pervert I just Enjoy The Art Of Hentai . — Youto Yokodera
+
+    Swimsuits are the best! Thank God for wedgies! — Youto Yokodera
+
+    So, Pervert... Do your best to make enough for a soccer team. — Azusa Azuki
+
+    Getting close to someone halfheartedly can cause you suffering. — Tsukushi Tsutsukakushi
+
+    The deviant Irish writer I so love, Oscar Wilde, once said while imprisoned: "I don't regret for a single moment having lived for pleasure." Like, if there was a popularity poll about girls swimsuits, who'd win? I keep wondering about this eternal mystery of mankind every day. There're as many different swimsuits as stars in the sky, but the ones the swimmers wear hold the most charm. — Youto Yokodera
+
+    I want to keep making memories with you. Even if I'll just lose them, I want to stay right by you because I love you. — Youto Yokodera
+
+    It's difficult to make a girl smile, even as a grown-up. But you should never, ever make a girl cry. And if you ever see a girl crying, help her. You might not be able to make her smile, but they'll know how you feel. — Youto Yokodera
+
+    Communication is the only way people can move ahead. — Tsukiko Tsutsukakushi
+
+    Buying into faceless rumors is the mark of a fool. — Tsukushi Tsutsukakushi
+
+    His greatest wish is to make you bear his child! He wants to pour his thick white genetic fluids all over you in pure carnal ecstasy! Hey, how dare you make a girl say that? — Mai Maimaki
+
+    Just die already! What are you waiting for? Go die! Die, then on the third day rise from the dead and die again! — Mai Maimaki
+
+    If the statement "little sisters are cute" is true, and the statement "every cute girl is a little sister" is also true, then this becomes a tautology. Therefore, your little sister is cute. — Youto Yokodera
+
+    Making one person happy may be different from making everyone happy. But I still don't want to make any girls cry. No matter what. — Youto Yokodera
+
+    Why the shorts, President?! What happened to your usual tights? This ruins the binding teen fetishism! Take those off right away and change into tights! You're so inconsiderate! — Youto Yokodera
+
+    What'll happen to us if no help comes? Will we have to be the Adam and Eve of this place? I'll do my best! So you should work hard enough to make a soccer team! — Azusa Azuki
+
+    You don't have to worry! Of course I like well-proportioned girls, but there are people who think a flat chest is a wonderful status symbol! Not to mention that if you're flat, you don't need to bother with bras! And they won't ever sag either, since there's nothing to sag in the first place! Isn't that wonderful, Flatty? — Youto Yokodera
+
+    Ashes to ashes. Dust to dust. Trash to the trashcan. Hopeless people to the hopeless box. — Tsukiko Tsutsukakushi
+
+    While it's important to show how you truly feel, you shouldn't just discard your facade entirely. Why don't you try wearing some other mask? If you're gonna put one on, try wearing a nicer one. Not the scary one you've got on now. — Youto Yokodera
+
+    I see. Now either figuratively bite your tongue and shut up, or literally bite your tongue and die. — Tsukiko Tsutsukakushi
+
+    Sometimes getting only a little closer makes things harder. — Tsukiko Tsutsukakushi
+
+    If you thought you saw something strange when you looked at me, then you're wrong. I will totally, utterly, absolutely, conclusively deny everything. — Tsukiko Tsutsukakushi
+
+[Problem Children Are Coming From Another World, Aren't They?]
+    True art requires your imagination for the unknown. It demands you seek out the mysterious. Yes, the best art is that which exists in your own universe within yourself. The contents of a maiden's skirt is no different. When you can see, all you're left with are vulgar panties, but if you can't see a thing, it is art! — Shiroyasha
+
+    It's art if I can't see anything?! — Izayoi Sakamaki
+
+    That's quite an interesting way to provoke someone. — Izayoi Sakamaki
+
+[Usigi Drop]
+    Boys are notoriously childish but, I can empathize. — Daikichi
+
+    Daikichi, are you gonna die before me? — Rin
+
+    Daikichi Should Stay Daikichi — Rin Kaga
+
+    It's dangerous if we don't hold hands — Rin Kaga
+
+    It's getting to the point where I'm losing track of whether I'm raising Rin, or whether she's raising me. — Daikichi Kawachi
+
+    Girls always have a heavy load to bear. — Haruko
+    </pre>
+  </div>
+  <div id="parallax-layer4"></div>
+  <div id="parallax-layer5"></div>
+  <script type="text/javascript">
+    (function(){
+      var parallaxLayers,
+          parallaxSpeed = new Array();
+
+      function parallaxIt(){
+        var Y = window.pageYOffset;
+        var X = window.pageXOffset;
+        for (var i = 0 ; i < parallaxLayers.length ; i++) {
+          ( function(){
+            var j = i;
+            parallaxLayers[j].style.backgroundPosition = "-" + X*parallaxSpeed[j] + "px -" + Y*parallaxSpeed[j] + "px";
+          })(i);
+        }
+      }
+      function bindEvent(){
+        window.addEventListener("scroll",parallaxIt);
+      }
+      function init(){
+        parallaxLayers = Array.prototype.slice.call( document.querySelectorAll("#parallax-box>div") );
+        for (var i = 0;i <  parallaxLayers.length;i++) {
+          (function() {
+            var j = i;
+            parallaxSpeed[j] = ( (j+1)*0.28 );
+          })(i);
+        }
+        bindEvent();
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>

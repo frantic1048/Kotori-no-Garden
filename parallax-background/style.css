@@ -1,0 +1,13 @@
+body{background:#222;color:#aaa;}
+pre{
+  width:100vw;
+  word-wrap:wrap-word;
+  background:transparent;
+}
+#parallax-box{overflow:visible;}
+#parallax-box>div{background-attachment:fixed;background-repeat:repeat;min-width:1000vw;min-height:100vh;overflow:visible;}
+#parallax-layer1{background-image:url("parallax-background1.png");pointer-events:none;position:fixed;left:0;top:0;}
+#parallax-layer2{background-image:url("parallax-background2.png");pointer-events:none;position:fixed;left:0;top:0;}
+#parallax-layer3{background-image:url("parallax-background3.png");}
+#parallax-layer4{background-image:url("parallax-background4.png");pointer-events:none;position:fixed;left:0;top:0;}
+#parallax-layer5{background-image:url("parallax-background5.png");pointer-events:none;position:fixed;left:0;top:0;}
