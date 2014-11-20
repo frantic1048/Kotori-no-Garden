@@ -1,0 +1,52 @@
+*{margin:0;box-sizing:border-box;}
+::-moz-selection{color:inherit;background:rgba(0,0,0,.1);}
+::selection{color:inherit;background:rgba(0,0,0,.1);}
+body{
+  height:150vh;
+  width:auto;
+  background:url('yande.re 301893.jpg');
+  background-size:cover;
+}
+#hana-svg{
+  position:fixed;
+  top:70vh;
+  left:12vw;
+  height:20vmin;
+  transition:transform .3s ease;
+}
+#hana-svg.active{
+  transform:scale(1.06);
+}
+
+#drag-panel>span{
+  display:inline-block;
+  cursor:pointer;
+  margin:0 .3em;
+  padding:.2em .4em;
+  transition:all .3s ease;
+  opacity:.7;
+}
+#drag-panel>span:hover{
+  color:white;
+  background:#7C87C5;
+}
+#drag-panel>span:active,
+#drag-panel>span.active{
+  color:#eee;
+  background:#586AC4;
+  opacity:1;
+}
+#hana{
+  transition:fill .3s ease,
+            stroke .3s ease;
+  fill:#E7F6FE;
+  stroke-width:1;
+  stroke:#838BCE;
+  opacity:.7;
+  cursor: move;
+}
+#hana:hover{
+  fill:#838BCE;
+  stroke:#E7F6FE;
+}
+#hana:active{ fill:#8584C8; }
